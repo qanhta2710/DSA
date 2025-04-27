@@ -11,3 +11,4 @@ LinkedList/circularLinkedList
 Queue/linkedListQueue
 Queue/circularQueue
 Queue/priorityQueue
+Heap/minHeap
