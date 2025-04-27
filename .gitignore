@@ -1,4 +1,10 @@
 .vscode/tasks.json
 *.exe
-*.json
-*.out
+Tree/MathExpression
+Stack/LinkedListStack
+Stack/arrayStack
+LinkedList/menuSinglyLinkedList
+LinkedList/doublyLinkedList
+LinkedList/vgcore.21471
+LinkedList/circularLinkedList
+

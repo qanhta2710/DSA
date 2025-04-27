@@ -61,6 +61,7 @@ int main() {
                 break;
             case 7:
                 printf("Exiting...");
+                freeList(myNode);
                 break;
         }
     } while (choice != 7);
@@ -151,5 +152,15 @@ CNode *deleteAtEnd(CNode *head) {
 }
 
 void freeList(CNode *head) {
-
+    CNode *tmp = head;
+    while (tmp->next != head) {
+        tmp = tmp->next;
+    }
+    tmp->next = NULL;
+    tmp = head;
+    while (head != NULL) {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
 }
