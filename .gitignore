@@ -1,0 +1,7 @@
+.vscode/tasks.json
+Tree/MathExpression
+Stack/LinkedListStack
+Stack/arrayStack
+LinkedList/menuSinglyLinkedList
+*.exe
+*.json

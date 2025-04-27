@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <conio.h>
+
 #define MAX 10
 
 int stack[MAX], top = -1;

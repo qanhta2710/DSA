@@ -12,6 +12,7 @@ Node *push(Node *head, int data);
 bool isEmpty(Node *head);
 Node *pop(Node *head);
 int peek(Node *head);
+void freeStack(Node *head);
 
 int main() {
     int option, value;
@@ -49,6 +50,7 @@ int main() {
                 break;
             case 4:
                 printf("Exiting...\n");
+                freeStack(top);
                 break;
             default:
                 printf("Invalid option\n");
@@ -98,3 +100,10 @@ int peek(Node *head) {
     }
 }
 
+void freeStack(Node *head) {
+    while (head != NULL) {
+        Node *tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}

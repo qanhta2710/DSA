@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 typedef struct DNode {
     struct DNode *prev;
@@ -46,7 +45,6 @@ int main() {
             break;
         case 2:
             display(myNode);
-            getch();
             break;
         case 3:
             printf("Enter value: ");

@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
-
 typedef struct Node {
     int data;
     struct Node *next;
@@ -17,7 +15,7 @@ Node *insertAfterANode(Node *head, int data, int value);
 Node *deleteAtBeginning(Node *head);
 Node *deleteAtEnd(Node *head);
 Node *deleteANode(Node *head, int value);
-Node *deleteLinkedList(Node *head);
+void deleteLinkedList(Node *head);
 Node *sort(Node *head);
 Node *reverse(Node *head);
 
@@ -36,10 +34,9 @@ int main() {
         printf("7. Delete a Node from the Beginning\n");
         printf("8. Delete a Node from the End\n");
         printf("9. Delete a Given Node\n");
-        printf("10. Delete the Entire Linked List\n");
-        printf("11. Sort the list\n");
-        printf("12. Reverse the list\n");
-        printf("13. Exit\n");
+        printf("10. Sort the list\n");
+        printf("11. Reverse the list\n");
+        printf("12. Exit\n");
         printf("Enter your option: ");
         scanf("%d", &option);
         switch (option) {
@@ -50,7 +47,6 @@ int main() {
             case 2:
                 printf("\033[H\033[J");
                 display(myNode);
-                _getch();
                 break;
             case 3:
                 printf("\033[H\033[J");
@@ -100,27 +96,23 @@ int main() {
                 break;
             case 10:
                 printf("\033[H\033[J");
-                printf("Deleting the entire linked list...\n");
-                myNode = deleteLinkedList(myNode);
-                break;
-            case 11:
-                printf("\033[H\033[J");
                 printf("Sorting the list...\n");
                 myNode = sort(myNode);
                 break;
-            case 12:
+            case 11:
                 printf("\033[H\033[J");
                 printf("Reversing the list...\n");
                 myNode = reverse(myNode);
                 break;
-            case 13:
+            case 12:
                 printf("\033[H\033[J");
                 printf("Exiting...\n");
+                deleteLinkedList(myNode);
                 break;
             default:
                 printf("Invalid option\n");
         }
-    } while (option != 13);
+    } while (option != 12);
     return 0;
 }
 
@@ -281,7 +273,7 @@ Node *deleteANode(Node *head, int value) {
     }
 }
 
-Node *deleteLinkedList(Node *head) {
+void deleteLinkedList(Node *head) {
     Node *tmp = head;
     while (head != NULL) {
         tmp = head;
