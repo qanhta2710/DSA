@@ -13,6 +13,7 @@ CNode *insertAtBeginning(CNode *head, int data);
 CNode *insertAtEnd(CNode *head, int data);
 CNode *deleteAtBeginning(CNode *head);
 CNode *deleteAtEnd(CNode *head);
+void freeList(CNode *head);
 
 int main() {
     CNode *myNode = NULL;
@@ -37,7 +38,6 @@ int main() {
             case 2:
                 printf("\033[H\033[J");
                 display(myNode);
-                getch();
                 break;
             case 3:
                 printf("\033[H\033[J");
@@ -148,4 +148,8 @@ CNode *deleteAtEnd(CNode *head) {
     current->next = head;
     free(tmp);
     return head;
+}
+
+void freeList(CNode *head) {
+
 }

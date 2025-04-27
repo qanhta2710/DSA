@@ -18,6 +18,7 @@ DNode *deleteAtBeginning(DNode *head);
 DNode *deleteAtEnd(DNode *head);
 DNode *deleteBefore(DNode *head, int value);
 DNode *deleteAfter(DNode *head, int value);
+void deleteList(DNode *head);
 
 int main() {
     int choice, x, value;
@@ -87,6 +88,7 @@ int main() {
             myNode = deleteAfter(myNode, x);
             break;
         case 11:
+            deleteList(myNode);
             printf("Exiting...");
             break;
         }
@@ -252,4 +254,12 @@ DNode *deleteAfter(DNode *head, int value) {
     }
     free(nodeToDelete);
     return head;
+}
+
+void deleteList(DNode *head) {
+    while (head != NULL) {
+        DNode *curr = head;
+        head = head->next;
+        free(curr);
+    }
 }
