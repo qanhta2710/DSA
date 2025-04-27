@@ -20,6 +20,7 @@ Queue *enqueue(Queue *head, int data, int priority);
 int dequeue(Queue *head);
 int peek(Queue *head);
 void display(Queue *head);
+void freeQueue(Queue *q);
 
 int main() {
     Queue *myQueue = makeQueue();
@@ -63,6 +64,7 @@ int main() {
             display(myQueue);
             break;
         case 5:
+            freeQueue(myQueue);
             printf("Exiting...");
             break;
         }
@@ -147,4 +149,14 @@ void display(Queue *head) {
         printf("%d ", data);
         tmp = tmp->next;
     }
+}
+
+void freeQueue(Queue *q) {
+    Node *current = q->front;
+    while (current != NULL) {
+        Node *tmp = current;
+        current = current->next;
+        free(tmp);
+    }
+    free(q);
 }
