@@ -8,3 +8,5 @@ LinkedList/doublyLinkedList
 LinkedList/vgcore.21471
 LinkedList/circularLinkedList
 
+Queue/linkedListQueue
+Queue/circularQueue

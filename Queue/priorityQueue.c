@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <conio.h>
 
 typedef struct Node {
     int data;
@@ -62,7 +61,6 @@ int main() {
             break;
         case 4:
             display(myQueue);
-            getch();
             break;
         case 5:
             printf("Exiting...");
